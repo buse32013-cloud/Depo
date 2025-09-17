@@ -1,3 +1,14 @@
+GitHub Dosyalarını Düzenleme
+
+Harika! GitHub deponuzu başarıyla oluşturdunuz ve dosyaları yüklediniz. Şimdi sıra ana.py dosyasını düzenlemekte.
+
+1. ana.py Dosyasını Düzenleme
+
+ana.py dosyasına tıklayın → Kalem ikonuna (düzenle) tıklayın
+
+Mevcut kodu tamamen silin ve aşağıdaki kodu yapıştırın:
+
+```python
 import os
 import telebot
 from telebot import types
@@ -63,3 +74,46 @@ def send_contact(message):
 
 if __name__ == "__main__":
     bot.polling(none_stop=True)
+```
+
+2. Değişiklikleri Kaydetme
+
+Sayfanın en altına inin:
+
+1. "Commit changes" bölümüne "Bot kodu eklendi" yazın
+2. "Commit directly to the main branch" seçeneğini işaretleyin
+3. "Commit changes" butonuna tıklayın
+
+3. Railway'e Bağlanma
+
+Şimdi Railway sitesine gidin:
+
+1. "New Project" butonuna tıklayın
+2. GitHub ile giriş yapın
+3. "Deploy from GitHub repo" seçeneğini seçin
+4. Az önce düzenlediğiniz "buse32013-bulut" deposunu seçin
+
+4. Environment Variable Ekleme
+
+Railway dashboard'unda:
+
+1. "Variables" sekmesine tıklayın
+2. "New Variable" butonuna tıklayın
+3. Name: BOT_TOKEN
+4. Value: BotFather'dan_aldığınız_token
+5. "Add" butonuna tıklayın
+
+5. Botu Deploy Etme
+
+Railway otomatik olarak deploy işlemini başlatacaktır. "Deployments" sekmesinden ilerlemeyi izleyebilirsiniz.
+
+Kontrol Listesi:
+
+· ana.py dosyası düzenlendi ✓
+· Değişiklikler commit edildi ✓
+· Railway'de yeni proje oluşturuldu
+· GitHub repo bağlandı
+· BOT_TOKEN environment variable eklendi
+· Deploy tamamlandı
+
+Railway deploy işlemini tamamladığında botunuz çalışmaya başlayacaktır! 🎉
