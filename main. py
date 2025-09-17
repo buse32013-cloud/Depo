@@ -1,0 +1,65 @@
+import os
+import telebot
+from telebot import types
+
+BOT_TOKEN = os.environ['BOT_TOKEN']
+bot = telebot.TeleBot(BOT_TOKEN)
+
+@bot.message_handler(commands=['start'])
+def send_welcome(message):
+    welcome_text = """
+    🎉 Nova Ajans'a Hoş Geldiniz! 🎉
+
+    🌟 VIP Escort Hizmetleri 🌟
+    Türkiye'nin her yerine 7/24 hizmet
+
+    ⚡ Hızlı Erişim Komutları:
+    /sehirler - Hizmet verilen şehirler
+    /iletisim - İletişim bilgileri
+    /fiyatlar - Ücret bilgileri
+
+    ❌ Lütfen Dikkat:
+    - "Selam", "Naber" gibi mesajlar atmayın
+    - Doğrudan hizmet talebi için iletişime geçmeyin
+    """
+    bot.send_message(message.chat.id, welcome_text)
+
+@bot.message_handler(commands=['sehirler'])
+def send_cities(message):
+    cities_text = """
+    🏙️ Hizmet Verilen Şehirler:
+
+    • İSTANBUL
+    • BALIKESİR
+    • BURSA
+    • YALOVA
+    • SAKARYA
+    • TEKİRDAĞ
+    • KONYA
+    • KOCAELİ
+    • ANTALYA
+    • ESKİŞEHİR
+    • ANKARA
+    • İZMİR
+
+    💡 Not: Tüm şehirlere 30 dakika içinde ulaşım imkanı
+    """
+    bot.send_message(message.chat.id, cities_text)
+
+@bot.message_handler(commands=['iletisim'])
+def send_contact(message):
+    contact_text = """
+    📞 İletişim Bilgileri:
+
+    🔹 Telegram: @PatronMardin
+    🔹 WhatsApp: [Numaranız]
+
+    🌐 Hizmet Noktaları:
+    Ev, Otel, Rezidans, Ofis, Yazlık
+
+    ⏰ Çalışma Saatleri: 7/24
+    """
+    bot.send_message(message.chat.id, contact_text)
+
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
